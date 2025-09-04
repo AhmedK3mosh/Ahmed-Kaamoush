@@ -1,0 +1,35 @@
+name: Generate Snake
+
+on:
+  schedule:
+    - cron: "0 3 * * *"   # يولّدها يوميًا 03:00 UTC
+  workflow_dispatch:       # تشغيل يدوي
+  push:
+    branches: ["main"]     # لو الفرع الرئيسي اسمه master غيّره هنا
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Generate snake files
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ahmedk3mosh
+          outputs: |
+            dist/snake.svg
+            dist/snake-dark.svg?palette=github-dark
+
+      - name: Upload as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: snake-graphics
+          path: dist
+
+      - name: Push to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
