@@ -66,3 +66,11 @@
 
 ⭐️ From [Ahmed Kaamoush](https://github.com/ahmedkaamoush)
 # Ahmed-Kaamoush
+### 🐍 Contribution Graph
+
+<!-- Light mode -->
+<img src="https://raw.githubusercontent.com/ahmedkaamoush/ahmedk3mosh/output/snake.svg#gh-light-mode-only" alt="Snake animation" />
+
+<!-- Dark mode -->
+<img src="https://raw.githubusercontent.com/ahmedkaamoush/ahmedk3mosh/output/snake-dark.svg#gh-dark-mode-only" alt="Snake animation dark" />
+
